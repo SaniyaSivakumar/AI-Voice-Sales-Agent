@@ -1,0 +1,124 @@
+{
+  "intents": [
+    {
+      "intent": "greeting",
+      "examples": [
+        "Hello!",
+        "Hi there, how are you?",
+        "Good morning!",
+        "Good evening!",
+        "Hey, is anyone available?",
+        "Hi, I need some help.",
+        "Hello sales agent!",
+        "Greetings!",
+        "Hi, good day!",
+        "Hey there!"
+      ]
+    },
+    {
+      "intent": "product_search",
+      "examples": [
+        "I am looking for a new smartphone.",
+        "Can you show me wireless headphones?",
+        "Do you sell laptops?",
+        "Search for smartwatches.",
+        "I want to find a gaming keyboard.",
+        "Do you have running shoes?",
+        "Show me your latest camera models.",
+        "I need a portable bluetooth speaker.",
+        "Are there any noise-canceling earbuds?",
+        "Find me a leather backpack."
+      ]
+    },
+    {
+      "intent": "product_recommendation",
+      "examples": [
+        "What laptop would you recommend for gaming?",
+        "Can you suggest a good budget smartphone?",
+        "Which running shoes are best for long distance?",
+        "What are your top recommended headphones?",
+        "Can you help me choose a smartwatch for fitness tracking?",
+        "Which camera is best for beginners?",
+        "Suggest a durable backpack for travel.",
+        "What is the best selling tablet right now?",
+        "Could you recommend a wireless mouse?",
+        "What noise-canceling headphones do you recommend?"
+      ]
+    },
+    {
+      "intent": "price_query",
+      "examples": [
+        "How much does this laptop cost?",
+        "What is the price of the wireless headphones?",
+        "How much is the new smartwatch?",
+        "Can you tell me the cost of this camera?",
+        "What is the price range for gaming keyboards?",
+        "How much are the running shoes?",
+        "What does the portable speaker cost?",
+        "How expensive is the leather backpack?",
+        "Can I get the price for these earbuds?",
+        "What is the rate for this tablet?"
+      ]
+    },
+    {
+      "intent": "discount_query",
+      "examples": [
+        "Are there any discounts on this item?",
+        "Is there a promo code available for laptops?",
+        "Do you offer any seasonal sales?",
+        "Can I get a discount if I buy two items?",
+        "Are there student discounts available?",
+        "Is this product currently on sale?",
+        "Do you have special offers for new customers?",
+        "Can you give me a price reduction on headphones?",
+        "What deals do you have today?",
+        "Is there any cashback or coupon code?"
+      ]
+    },
+    {
+      "intent": "feature_query",
+      "examples": [
+        "What are the specifications of this laptop?",
+        "Is this smartwatch waterproof?",
+        "How long does the headphone battery last?",
+        "Does this smartphone support 5G network?",
+        "What materials is this backpack made of?",
+        "Does this camera come with a lens?",
+        "What is the screen size of this tablet?",
+        "Does the keyboard have RGB backlighting?",
+        "Is this speaker compatible with iOS and Android?",
+        "Does it support fast charging?"
+      ]
+    },
+    {
+      "intent": "availability",
+      "examples": [
+        "Is this item in stock?",
+        "Do you have this laptop in black color?",
+        "Is the smartwatch available for immediate delivery?",
+        "When will this product be back in stock?",
+        "Do you have size 10 in these shoes?",
+        "Are these headphones available in your store?",
+        "Is this camera model currently available?",
+        "Do you have multiple color options in stock?",
+        "Can I order this item right now?",
+        "How many units of this product are left?"
+      ]
+    },
+    {
+      "intent": "goodbye",
+      "examples": [
+        "Thank you, goodbye!",
+        "Bye, have a great day!",
+        "Thanks for your help, see you!",
+        "That is all for now, goodbye.",
+        "Catch you later!",
+        "Thank you so much, bye!",
+        "Have a nice day!",
+        "I am done, thanks and goodbye.",
+        "Take care, bye!",
+        "Talk to you next time."
+      ]
+    }
+  ]
+}
