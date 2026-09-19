@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Voice Sales Agent | Intelligent Shopping Assistant</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-headset"></i>
+        </div>
+        <div class="brand-text">
+          <h1>AI Voice Sales Agent</h1>
+          <span class="brand-subtitle">Smart Conversational Shopping Assistant</span>
+        </div>
+      </div>
+
+      <div class="nav-status-group">
+        <div id="backend-status-pill" class="status-pill offline">
+          <span class="status-dot"></span>
+          <span id="backend-status-text">Connecting to Backend...</span>
+        </div>
+        <div class="system-modules-badge">
+          <span class="module-chip" title="Saniya - AI Model"><i class="fa-solid fa-brain"></i> AI DL Model</span>
+          <span class="module-chip" title="Padmaa - Voice Module"><i class="fa-solid fa-microphone-lines"></i> Voice Engine</span>
+          <span class="module-chip active" title="Hafil - Backend & Frontend"><i class="fa-solid fa-database"></i> DB & API</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="app-container">
+
+    <!-- Top Banner -->
+    <section class="welcome-banner">
+      <div class="banner-content">
+        <h2>Talk or Search to Explore Products Effortlessly</h2>
+        <p>Use your voice or text to search products, check live availability, inquire about prices, discounts, and features.</p>
+      </div>
+      <div class="banner-quick-actions">
+        <button id="btn-quick-recommend" class="btn btn-secondary">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Get AI Recommendations
+        </button>
+      </div>
+    </section>
+
+    <!-- 2-Column Main Workspace -->
+    <div class="main-workspace">
+
+      <!-- LEFT COLUMN: AI Voice Assistant Controls & Feed -->
+      <section class="assistant-panel card-glass">
+        <div class="panel-header">
+          <h3><i class="fa-solid fa-robot"></i> Voice Sales Assistant</h3>
+          <span id="voice-state-badge" class="badge badge-idle">Ready</span>
+        </div>
+
+        <!-- Mic & Voice Controls -->
+        <div class="voice-hero">
+          <div class="mic-wrapper">
+            <div id="mic-pulse-ring-1" class="pulse-ring"></div>
+            <div id="mic-pulse-ring-2" class="pulse-ring"></div>
+            <button id="btn-mic" class="mic-button" aria-label="Toggle Microphone">
+              <i class="fa-solid fa-microphone"></i>
+            </button>
+          </div>
+
+          <div class="voice-status-wrapper">
+            <div id="voice-status-title" class="voice-status-title">Click Microphone to Start Speaking</div>
+            <p id="voice-status-sub" class="voice-status-sub">Try asking: <em>"What is the price of the UltraBook Pro?"</em> or <em>"Do you have running shoes?"</em></p>
+          </div>
+
+          <div class="voice-action-row">
+            <button id="btn-start-listen" class="btn btn-primary btn-sm">
+              <i class="fa-solid fa-play"></i> Start Listening
+            </button>
+            <button id="btn-stop-listen" class="btn btn-danger btn-sm" disabled>
+              <i class="fa-solid fa-stop"></i> Stop Listening
+            </button>
+            <button id="btn-demo-speak" class="btn btn-outline btn-sm">
+              <i class="fa-solid fa-volume-high"></i> Test Voice Output
+            </button>
+          </div>
+        </div>
+
+        <!-- Live Speech Transcript Display -->
+        <div class="transcript-card">
+          <div class="transcript-header">
+            <span><i class="fa-solid fa-waveform"></i> Live User Transcript</span>
+            <span id="listening-indicator" class="listening-dot hidden"></span>
+          </div>
+          <div id="transcript-box" class="transcript-box">
+            <span class="placeholder-text">Listening speech transcript will appear here in real-time...</span>
+          </div>
+        </div>
+
+        <!-- Text Input Fallback -->
+        <form id="text-input-form" class="text-input-group">
+          <input 
+            type="text" 
+            id="text-query-input" 
+            placeholder="Type your question or query here..." 
+            autocomplete="off" 
+          />
+          <button type="submit" id="btn-send-text" class="btn btn-accent">
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+
+        <!-- AI Agent Response Box -->
+        <div class="agent-response-card">
+          <div class="agent-avatar-row">
+            <div class="agent-avatar">
+              <i class="fa-solid fa-headset"></i>
+            </div>
+            <div class="agent-meta">
+              <strong>Sales Agent Response</strong>
+              <span id="agent-response-time" class="time-stamp">Just now</span>
+            </div>
+            <button id="btn-replay-agent" class="btn-icon" title="Replay Speech">
+              <i class="fa-solid fa-volume-high"></i>
+            </button>
+          </div>
+          <div id="agent-response-text" class="agent-text">
+            "Hello! I am your AI Voice Sales Agent. Click the microphone or type a query to ask about products, pricing, stock availability, or recommendations!"
+          </div>
+          
+          <!-- Audio Waveform Animation -->
+          <div id="audio-wave-visualizer" class="audio-wave hidden">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+
+        <!-- Conversation History Feed -->
+        <div class="history-section">
+          <div class="history-header">
+            <h4><i class="fa-solid fa-clock-rotate-left"></i> Conversation History</h4>
+            <button id="btn-clear-history" class="btn-text">Clear</button>
+          </div>
+          <div id="history-feed" class="history-feed">
+            <!-- Dynamic chat log items populated here -->
+          </div>
+        </div>
+      </section>
+
+      <!-- RIGHT COLUMN: Catalog & Products Section -->
+      <section class="products-panel">
+        
+        <!-- Search & Filter Controls Bar -->
+        <div class="search-filter-card card-glass">
+          <div class="search-bar-row">
+            <div class="search-input-wrapper">
+              <i class="fa-solid fa-magnifying-glass search-icon"></i>
+              <input 
+                type="text" 
+                id="product-search-input" 
+                placeholder="Search products by name, category, or features (e.g. laptop, headphones, waterproof)..." 
+              />
+              <button id="btn-clear-search" class="btn-icon hidden" title="Clear Search">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            
+            <div class="stock-filter-wrapper">
+              <label class="switch-label">
+                <input type="checkbox" id="chk-in-stock-only" />
+                <span class="slider"></span>
+                <span class="switch-text">In Stock Only</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Category Chips -->
+          <div class="categories-bar">
+            <span class="category-chip active" data-category="all">All Items</span>
+            <span class="category-chip" data-category="Laptops">Laptops</span>
+            <span class="category-chip" data-category="Audio">Audio</span>
+            <span class="category-chip" data-category="Wearables">Wearables</span>
+            <span class="category-chip" data-category="Smartphones">Smartphones</span>
+            <span class="category-chip" data-category="Tablets">Tablets</span>
+            <span class="category-chip" data-category="Cameras">Cameras</span>
+            <span class="category-chip" data-category="Accessories">Accessories</span>
+            <span class="category-chip" data-category="Footwear">Footwear</span>
+            <span class="category-chip" data-category="Bags">Bags</span>
+          </div>
+        </div>
+
+        <!-- Recommended Products Bar -->
+        <div class="recommendations-section">
+          <div class="section-title-row">
+            <h3><i class="fa-solid fa-fire text-gradient"></i> Recommended Products</h3>
+            <span class="subtitle">Handpicked top deals for you</span>
+          </div>
+          <div id="recommendations-container" class="recommendations-carousel">
+            <!-- Dynamic recommended cards -->
+          </div>
+        </div>
+
+        <!-- Product Catalog Section -->
+        <div class="catalog-section">
+          <div class="section-title-row">
+            <h3><i class="fa-solid fa-store"></i> Product Catalog</h3>
+            <span id="product-count-badge" class="count-badge">0 Items</span>
+          </div>
+
+          <div id="products-grid" class="products-grid">
+            <!-- Dynamic Product Cards -->
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- Product Detail Modal -->
+  <div id="product-modal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <button id="btn-close-modal" class="modal-close-btn">&times;</button>
+      <div id="modal-content" class="modal-body">
+        <!-- Dynamic content -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
