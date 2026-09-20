@@ -67,7 +67,10 @@
         "Show me leather laptop bags.",
         "Where are your water-resistant smartwatches listed?",
         "Find all bluetooth earbud models.",
-        "Search for studio monitor speakers."
+        "Search for studio monitor speakers.",
+        "I'm looking for a suitable smartphone",
+        "Can you help me find a laptop?",
+        "Show me phones that are available"
       ]
     },
     {
@@ -137,7 +140,11 @@
         "How much would it cost me to buy this portable charger?",
         "Could you list the prices for these DSLR lenses?",
         "What is the cost estimate for this gaming PC bundle?",
-        "How much does this fitness smartwatch cost right now?"
+        "How much does this fitness smartwatch cost right now?",
+        "How much would I pay for this product?",
+        "What is the current price of this item?",
+        "Tell me the cost of this device",
+        "What is the selling price of this phone?"
       ]
     },
     {
@@ -207,7 +214,12 @@
         "Does this monitor support HDMI 2.1 input?",
         "What power output wattage does this portable charger have?",
         "Are these headphones equipped with a built-in microphone?",
-        "Is this external hard drive shockproof and durable?"
+        "Is this external hard drive shockproof and durable?",
+        "What are the main features of this product?",
+        "What functions does this phone support?",
+        "Can you tell me what this device can do?",
+        "Does this product support fast charging?",
+        "What specifications does this product have?"
       ]
     },
     {
@@ -242,7 +254,12 @@
         "Is this backpack currently available to order?",
         "Do you carry this monitor size in your current inventory?",
         "Are these running shoes available in wide fit size 11?",
-        "How many items are remaining in your warehouse?"
+        "How many items are remaining in your warehouse?",
+        "Is this product currently in stock?",
+        "Can I order this item right now?",
+        "Do you currently have this model?",
+        "Is this device available for purchase?",
+        "Can I get this product today?"
       ]
     },
     {
