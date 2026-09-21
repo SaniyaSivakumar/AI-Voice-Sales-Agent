@@ -23,9 +23,9 @@ AI-Voice-Sales-Agent/
 
 | Team Member | Module & Responsibilities |
 | :--- | :--- |
-| **Saniya** | **AI / Deep Learning**<br>• Intent classification model design and training<br>• NLP preprocessing and entity extraction<br>• Dataset collection and model evaluation |
-| **Padmaa** | **Voice Module**<br>• Speech-to-Text (STT) audio transcription<br>• Text-to-Speech (TTS) voice generation<br>• Audio streaming & speech processing pipeline |
-| **Hafil** | **Frontend + Backend / Database**<br>• Web user interface development<br>• REST/WebSocket API endpoints<br>• Product database design & query handling |
+| **padmaapriya** | **AI / Deep Learning**<br>• Intent classification model design and training<br>• NLP preprocessing and entity extraction<br>• Dataset collection and model evaluation |
+| **hafil** | **Voice Module**<br>• Speech-to-Text (STT) audio transcription<br>• Text-to-Speech (TTS) voice generation<br>• Audio streaming & speech processing pipeline |
+| **saniya** | **Frontend + Backend / Database**<br>• Web user interface development<br>• REST/WebSocket API endpoints<br>• Product database design & query handling |
 
 ---
 
